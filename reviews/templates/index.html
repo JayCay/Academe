@@ -40,7 +40,14 @@
 			<td>{{ review.updated_at }}</td>
 		</tr>
 		{% endfor %}
-
 	</table>
+
+	<!-- Make the form for uploading a new review -->
+	<h1>New review</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ upload_form.as_p }}
+		<button type="submit">Save</button>
+	</form>
 </body>
 </html>

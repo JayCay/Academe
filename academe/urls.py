@@ -20,5 +20,5 @@ from reviews import views as reviews_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', reviews_views.index, name="reviews_index")
+    url(r'^$', reviews_views.index, name="reviews_index"),
 ]
