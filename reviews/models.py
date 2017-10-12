@@ -15,7 +15,6 @@ class Prof(models.Model):
 	def __str__ (self):
 		return self.first_name + self.last_name
 	
-	
 class Review(models.Model):
 	message = models.TextField(max_length = 4000)
 	created_at = models.DateTimeField(auto_now_add = True)

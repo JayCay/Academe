@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from reviews import views as reviews_views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', reviews_views.index, name="reviews_index")
 ]

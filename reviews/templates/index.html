@@ -1,0 +1,5 @@
+<center><h1>Reviews</h1></center>
+{% for review in reviews %} 
+	<h2>{{ review.prof.first_name }} {{ review.prof.last_name }}</h2>
+	<p>{{ review.message }}</p>
+{% endfor %}

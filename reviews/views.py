@@ -4,4 +4,4 @@ from .models import Review
 # Create your views here.
 def index(request):
 	reviews = Review.objects.all()
-	return render(request, 'reviews.html', {'reviews': reviews})
+	return render(request, 'index.html', {'reviews': reviews})
