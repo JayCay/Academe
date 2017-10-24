@@ -18,7 +18,10 @@ from django.contrib import admin
 
 from reviews import views as reviews_views
 
+from profs import views as profs_views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', reviews_views.index, name="reviews_index"),
+    url(r'^profs/', profs_views.index, name="profs_index"),
 ]

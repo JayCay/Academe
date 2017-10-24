@@ -2,18 +2,14 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 
+# Import profs
+from profs.models import Prof
+
 # Create your models here.
 
 class Course(models.Model):
 	name = models.CharField(max_length = 15, unique = True)
 	description = models.CharField(max_length = 100)
-
-class Prof(models.Model):
-	first_name = models.CharField(max_length = 20, unique = False)
-	last_name = models.CharField(max_length = 20, unique = False)
-	
-	def __str__ (self):
-		return self.first_name + self.last_name
 	
 class Review(models.Model):
 	message = models.TextField(max_length = 4000)
