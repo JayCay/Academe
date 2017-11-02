@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+	'widget_tweaks',
+	
     'reviews',
     'profs',
+	'accounts',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +133,5 @@ STATICFILES_DIRS = [
 
 # Tells django where to put static files after collectstatic
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+LOGOUT_REDIRECT_URL = 'reviews_index'

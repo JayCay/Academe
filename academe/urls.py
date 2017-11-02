@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+
+from accounts import views as accounts_views
 
 from reviews import views as reviews_views
 
 from profs import views as profs_views
 
 urlpatterns = [
+	url(r'^signup/$', accounts_views.signup, name='signup'),
+	url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^admin/', admin.site.urls),
     url(r'^$', reviews_views.index, name="reviews_index"),
     url(r'^profs/', profs_views.index, name="profs_index"),
