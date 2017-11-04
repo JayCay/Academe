@@ -1,25 +1,28 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-<center><h1>Profs</h1></center>
-<table style="border: 1px solid black">
-	<tr>
-		<th>First Name</th>
-		<th>Last Name</th>
-	</tr>
-	<!-- Create the table rows -->
-	{% for prof in profs %} 
-		<tr>
-			<th>{{ prof.first_name }}</th>
-			<th>{{ prof.last_name }}</th>
-		</tr>
-	{% endfor %}
-</table>
+<center><h1>Professors</h1></center>
+<!-- Create the table rows -->
+{% for prof in profs %} 
+	<ul style="text-align: center; list-style: none; padding: 0">
+		<li><a href="{% url 'profs_getProf' prof_id=prof.id %}">{{ prof.first_name}} {{ prof.last_name }}</a></li>
+	</ul>
+{% endfor %}
+
+<!-- Form for making a new review -->
+<h1>New Review</h1>
+<form method="POST">
+	{% csrf_token %}
+	{{ review_form.as_p }}
+	<button type="submit">Save</button>
+</form>
 
 <!-- Make the form for uploading a new prof -->
-<h1>New prof</h1>
+<!-- <h1>New prof</h1>
 <form method="POST">
 	{% csrf_token %}
 	{{ prof_form.as_p }}
 	<button type="submit">Save</button>
-</form>
+</form> -->
+
+
 {% endblock %}

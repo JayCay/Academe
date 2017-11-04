@@ -4,19 +4,40 @@
 <head>
 	<title>Academe</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
-	<h1><center>Academe</center></h1>
-	<nav>
-		<ul>
-			<li><a href="{% url 'reviews_index' %}">Home</a></li>
-			<li><a href="{% url 'profs_index' %}">Profs</a></li>
-			<li><a href="{% url 'login' %}">Log in</a></li>
-			<li><a href="{% url 'logout' %}">Log out</a></li
-			<li><a href="{% url 'signup' %}">Sign Up</a></li>
-			<li>{{ user.username }}</li>
-		</ul>
-	</nav>
+<nav class="navbar navbar-light navbar-toggleable-md bg-faded">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand" href="{% url 'homepage' %}">Academe</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profs_index' %}">Professors</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <input type="text" class="form-control" placeholder="Search">
+                <button class="btn btn-outline-success">Search</button>
+                <ul class="navbar-nav mr-auto">
+                	{% if user.is_authenticated %}
+	                <li class="nav-item">
+	                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+	                </li>
+                	{% else %}
+	                <li class="nav-item">
+	                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="{% url 'signup' %}">Sign-up</a>
+                	</li>
+                	{% endif %}
+            	</ul>
+            </form>
+        </div>
+    </div>
+</nav>
 	{% block content %}
 	{% endblock %}
 </body>

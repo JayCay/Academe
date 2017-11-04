@@ -106,6 +106,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = '/login/'   
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -135,6 +136,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_REDIRECT_URL = 'reviews_index'
-LOGOUT_REDIRECT_URL = 'reviews_index'
+LOGOUT_REDIRECT_URL = 'homepage'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

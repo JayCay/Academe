@@ -31,6 +31,8 @@ urlpatterns = [
 	url(r'^login/$', auth_views.LoginView.as_view(template_name='templates/login.html'), name='login'),
 	url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', reviews_views.index, name="reviews_index"),
-    url(r'^profs/', profs_views.index, name="profs_index"),
+    url(r'^$', reviews_views.index, name="homepage"),
+    url(r'reviews/$', reviews_views.index, name="reviews_index"),
+    url(r'^prof/$', profs_views.index, name="profs_index"),
+    url(r'^prof/(?P<prof_id>[0-9]+)/$', profs_views.getProf, name="profs_getProf"),
 ]
