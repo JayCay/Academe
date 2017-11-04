@@ -1,16 +1,18 @@
-from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth import login as auth_login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import render, redirect
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 
 from accounts.forms import SignUpForm
 from accounts.tokens import account_activation_token
 
-#@login_required
-#def home(request):
-#	return render(request, 'reviews_index')
+@login_required
+def home(request):
+	return render(request, 'reviews_index')
 
 def signup(request):
 	if request.method == 'POST':
@@ -21,7 +23,7 @@ def signup(request):
 			user.save()
 			current_site = get_current_site(request)
 			subject = 'Activate your Academe Account'
-			message = render_to_string('account_activation_email.html', {
+			message = render_to_string('templates/account_activation_email.html', {
 				'user': user,
 				'domain': current_site.domain,
 				'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -34,7 +36,7 @@ def signup(request):
 	return render(request, 'templates/signup.html', {'form' : form})
 	
 def account_activation_sent(request):
-	return render(request, 'account_activation_sent.html')
+	return render(request, 'templates/account_activation_sent.html')
 	
 def activate(request, uidb64, token):
 	try:
@@ -47,7 +49,7 @@ def activate(request, uidb64, token):
 		user.is_active = True
 		user.profile.email_confirmed= True
 		user.save()
-		login(request, user)
+		auth_login(request, user)
 		return redirect('reviews_index')
 	else:
-		return render(request, 'account_activation_invalid.html')
+		return render(request, 'templates/account_activation_invalid.html')
