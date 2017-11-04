@@ -136,3 +136,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_REDIRECT_URL = 'reviews_index'
 LOGOUT_REDIRECT_URL = 'reviews_index'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
