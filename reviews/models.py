@@ -20,7 +20,6 @@ class Review(models.Model):
 		validators = [MaxValueValidator(5), MinValueValidator(0)]
 	)
 	prof = models.ForeignKey(Prof, related_name = 'reviews')
-	user = models.ForeignKey(User, related_name = 'reviews')
 	
 	def __str__ (self):
 		return self.message

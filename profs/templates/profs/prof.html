@@ -26,21 +26,11 @@
     {% endfor %}
   </tbody>
 </table>
-{% if messages %}
-{% for message in messages %}
-{{ message }}
-{% endfor %}
-{% endif %}
 
 <div class="form-group">
   <label for="comment">Review {{ prof.first_name }} {{ prof.last_name }}</label>
-  <form method="POST">
-    {% csrf_token %}
-    <p>{{ review_form.message }}</p>
-    <p>{{ review_form.rating }}</p>
-    <button type="submit" class="btn btn-default">Submit Review</button>
-  </form>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+  <button type="submit" class="btn btn-default">Submit Review</button>
 </div>
-
 
 {% endblock %}

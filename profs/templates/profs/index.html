@@ -12,9 +12,7 @@
 <h1>New Review</h1>
 <form method="POST">
 	{% csrf_token %}
-	<p>{{ review_form.message }}</p>
-    <p>{{ review_form.rating }}</p>
-    <p>{{ review_form.prof }}</p>
+	{{ review_form.as_p }}
 	<button type="submit">Save</button>
 </form>
 

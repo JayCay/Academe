@@ -41,7 +41,7 @@ def signup(request):
 			#set up smtp
 			s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 			s.starttls()
-			MY_ADDRESS = "academe.site@gmail.com"
+			MY_ADDRESS = "academe.obf@gmail.com"
 			s.login(MY_ADDRESS, "Thisisthetester")
 
 			with open("templates/account_activation_email.txt", encoding="utf-8") as template_file:
