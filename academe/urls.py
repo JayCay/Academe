@@ -23,15 +23,17 @@ from reviews import views as reviews_views
 
 from profs import views as profs_views
 
+from academe import views as academe_views
+
 urlpatterns = [
-	url(r'^signup/$', accounts_views.signup, name='signup'),
-	url(r'^account_activation_sent/$', accounts_views.account_activation_sent, name='account_activation_sent'),
-	url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
+    url(r'^signup/$', accounts_views.signup, name='signup'),
+    url(r'^account_activation_sent/$', accounts_views.account_activation_sent, name='account_activation_sent'),
+    url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$',
         accounts_views.activate, name='activate'),
-	url(r'^login/$', auth_views.LoginView.as_view(template_name='templates/login.html'), name='login'),
-	url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
+    url(r'^login/$', auth_views.LoginView.as_view(template_name='templates/login.html'), name='login'),
+    url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', reviews_views.index, name="homepage"),
+    url(r'^$', academe_views.index, name="homepage"),
     url(r'reviews/$', reviews_views.index, name="reviews_index"),
     url(r'^prof/$', profs_views.index, name="profs_index"),
     url(r'^prof/(?P<prof_id>[0-9]+)/$', profs_views.getProf, name="profs_getProf"),

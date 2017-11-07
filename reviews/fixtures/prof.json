@@ -1,6 +1,6 @@
 [
   {
-    "model": "reviews.prof",
+    "model": "profs.Prof",
     "pk": 1,
     "fields": {
       "first_name": "Gab",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "model": "reviews.prof",
+    "model": "profs.Prof",
     "pk": 2,
     "fields": {
       "first_name": "Jayce",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "model": "reviews.prof",
+    "model": "profs.Prof",
     "pk": 3,
     "fields": {
       "first_name": "Josh",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "model": "reviews.prof",
+    "model": "profs.Prof",
     "pk": 4,
     "fields": {
       "first_name": "Nate",

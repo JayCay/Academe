@@ -2,14 +2,15 @@
 {% block content %}
     <div> 
     <h1><center>{{prof.first_name}} {{prof.last_name}}</center></h1>
-    <h3><center>Reviews</center></h3>
+    <h4><center>Reviews</center></h4>
 
     </div>
 
     <table class="table table-bordered">
   <thead>
     <tr>
-      <th>#</th>
+      <th>Review #</th>
+      <th>Review By</th>
       <th>Rating</th>
       <th>Review</th>
       <th>Created At</th>
@@ -19,6 +20,7 @@
     {% for review in reviews %}
     <tr>
       <th scope="row">{{ review.id }}</th>
+      <td>{{ review.user }}</td>
       <td>{{ review.rating }}</td>
       <td>{{ review.message }}</td>
       <td>{{ review.created_at }}</td>
@@ -26,11 +28,21 @@
     {% endfor %}
   </tbody>
 </table>
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
 
 <div class="form-group">
   <label for="comment">Review {{ prof.first_name }} {{ prof.last_name }}</label>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
-  <button type="submit" class="btn btn-default">Submit Review</button>
+  <form method="POST">
+    {% csrf_token %}
+    <p>{{ review_form.message }}</p>
+    <p>{{ review_form.rating }}</p>
+    <button type="submit" class="btn btn-default">Submit Review</button>
+  </form>
 </div>
+
 
 {% endblock %}

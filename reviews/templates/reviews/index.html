@@ -1,9 +1,12 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 <center><h1>Reviews</h1></center>
+
 <table style="border: 1px solid black">
 	<tr>
-		<th>Prof Name</th>
+		<th>Review #</th>
+		<th>Review By</th>
+		<th>Professor</th>
 		<th>Review</th>
 		<th>Rating</th>
 		<th>Created At</th>
@@ -12,6 +15,8 @@
 	<!-- Create the table rows -->
 	{% for review in reviews %} 
 	<tr>
+		<td>{{ review.id }}</td>
+		<td>{{ review.user }}</td>
 		<td>{{ review.prof.first_name }} {{ review.prof.last_name }}</td>
 		<td>{{ review.message }}</td>
 		<td>{{ review.rating }}</td>
@@ -22,10 +27,10 @@
 </table>
 
 <!-- Make the form for uploading a new review -->
-<h1>New review</h1>
+<!-- <h1>New review</h1>
 <form method="POST">
 	{% csrf_token %}
 	{{ upload_form.as_p }}
 	<button type="submit">Save</button>
 </form>
-{% endblock %}
+{% endblock %} -->
