@@ -1,0 +1,892 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields":
+    {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields":
+    {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields":
+    {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields":
+    {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields":
+    {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields":
+    {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields":
+    {
+        "app_label": "reviews",
+        "model": "review"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields":
+    {
+        "app_label": "profs",
+        "model": "course"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields":
+    {
+        "app_label": "profs",
+        "model": "prof"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields":
+    {
+        "app_label": "accounts",
+        "model": "profile"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "s6szzn96qcszaeg6rzt7hxvb9z271y80",
+    "fields":
+    {
+        "session_data": "NmU2YzNiNjZmN2I0YjBlYjk1NjVjN2QxYjRkNTg0MzBhYmZiZjMwNTp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0Y2M2NDAyMjVmYjM0ZmRhYTM4OTA4MzZlNGU2NjZjMzVhZWNlYTUxIn0=",
+        "expire_date": "2017-11-30T10:07:59.697Z"
+    }
+},
+{
+    "model": "profs.prof",
+    "pk": 1,
+    "fields":
+    {
+        "first_name": "Gab",
+        "last_name": "De Jesus"
+    }
+},
+{
+    "model": "profs.prof",
+    "pk": 2,
+    "fields":
+    {
+        "first_name": "Jayce",
+        "last_name": "Ching"
+    }
+},
+{
+    "model": "profs.prof",
+    "pk": 3,
+    "fields":
+    {
+        "first_name": "Josh",
+        "last_name": "Castillo"
+    }
+},
+{
+    "model": "profs.prof",
+    "pk": 4,
+    "fields":
+    {
+        "first_name": "Nate",
+        "last_name": "Kibanoff"
+    }
+},
+{
+    "model": "profs.course",
+    "pk": 1,
+    "fields":
+    {
+        "name": "CS 123",
+        "prof": [1]
+    }
+},
+{
+    "model": "profs.course",
+    "pk": 2,
+    "fields":
+    {
+        "name": "CS 129.1",
+        "prof": [1]
+    }
+},
+{
+    "model": "profs.course",
+    "pk": 3,
+    "fields":
+    {
+        "name": "CS 152",
+        "prof": [1]
+    }
+},
+{
+    "model": "profs.course",
+    "pk": 4,
+    "fields":
+    {
+        "name": "CS21a",
+        "prof": [1]
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields":
+    {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields":
+    {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields":
+    {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields":
+    {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields":
+    {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields":
+    {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields":
+    {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields":
+    {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields":
+    {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields":
+    {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields":
+    {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields":
+    {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields":
+    {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields":
+    {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields":
+    {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields":
+    {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields":
+    {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields":
+    {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields":
+    {
+        "name": "Can add review",
+        "content_type": 7,
+        "codename": "add_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields":
+    {
+        "name": "Can change review",
+        "content_type": 7,
+        "codename": "change_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields":
+    {
+        "name": "Can delete review",
+        "content_type": 7,
+        "codename": "delete_review"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields":
+    {
+        "name": "Can add course",
+        "content_type": 8,
+        "codename": "add_course"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields":
+    {
+        "name": "Can change course",
+        "content_type": 8,
+        "codename": "change_course"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields":
+    {
+        "name": "Can delete course",
+        "content_type": 8,
+        "codename": "delete_course"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields":
+    {
+        "name": "Can add prof",
+        "content_type": 9,
+        "codename": "add_prof"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields":
+    {
+        "name": "Can change prof",
+        "content_type": 9,
+        "codename": "change_prof"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields":
+    {
+        "name": "Can delete prof",
+        "content_type": 9,
+        "codename": "delete_prof"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields":
+    {
+        "name": "Can add profile",
+        "content_type": 10,
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields":
+    {
+        "name": "Can change profile",
+        "content_type": 10,
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields":
+    {
+        "name": "Can delete profile",
+        "content_type": 10,
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$WY4181pJ6jEZ$rLoJ0PUypo1TAohz14uhcw6U2qAMvoWT0ZP9Nx/GrRU=",
+        "last_login": "2017-11-05T05:17:10.767Z",
+        "is_superuser": true,
+        "username": "gab",
+        "first_name": "",
+        "last_name": "",
+        "email": "g@email.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-05T05:16:54.320Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$CTc1bTGpb5XX$gqztJEFTYdhGP46roZA9f81aFgUHduUuhR3DtKJqQWA=",
+        "last_login": "2017-11-16T10:07:59.419Z",
+        "is_superuser": false,
+        "username": "test",
+        "first_name": "",
+        "last_name": "",
+        "email": "gabs@obf.ateneo.edu",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-11-05T05:17:50.362Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$q8uanmkHZOq1$t+MMohk2JueruwP+PKKLHQr4bGV8v/8009AbRHLTy1k=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "Third User",
+        "first_name": "",
+        "last_name": "",
+        "email": "user@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-12-06T02:21:29.562Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$q8uanmkHZOq1$t+MMohk2JueruwP+PKKLHQr4bGV8v/8009AbRHLTy1k=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "JustMonika",
+        "first_name": "",
+        "last_name": "",
+        "email": "lilmonix3@ddlc.moe",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-06T02:21:29.562Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$B2d7YHRVEhCF$1uNgdZjsQnLHCrAbuyHzoAKME+Zsaxd9sk3WODX/F/o=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "jayce",
+        "first_name": "",
+        "last_name": "",
+        "email": "jayce@academe.me",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-06T02:24:13.352Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$OwOm3XlXOtJC$F0HSveJ50XDP+fgYWhXjPYYJ+v5+uptanqOsMnKkup4=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "josh",
+        "first_name": "",
+        "last_name": "",
+        "email": "josh@academe.me",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-06T02:24:31.611Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$m4DYavykXw30$nh9VdgTie8k8mz/qlrXpEZLeRHDKGUGE6LB1nGq/eUk=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "nate",
+        "first_name": "",
+        "last_name": "",
+        "email": "nate@academe.me",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-06T02:30:32.780Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$9IKkqXDMimF6$n5bShF22TKEIabIz23rAds6c9vGfvpDeTUoigJqjkss=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "DjangoUnchained",
+        "first_name": "",
+        "last_name": "",
+        "email": "jjjajango@academe.me",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-06T02:32:33.714Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$DmSZdYLL3gDk$VA42X4qGTkg57FWKXVs8jbBKpa3x26S/1yfEMuLVBj4=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "NameUser",
+        "first_name": "",
+        "last_name": "",
+        "email": "username@email.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-06T02:33:40.289Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields":
+    {
+        "password": "pbkdf2_sha256$36000$znKBjfvb5mDG$YyW03jKMHmAsD3bRTnfCHsmhM/TThOhjDcfByvCfG88=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "WordPass",
+        "first_name": "",
+        "last_name": "",
+        "email": "password@email.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-11-06T02:34:07.822Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 1,
+    "fields":
+    {
+        "message": "legendary",
+        "created_at": "2017-11-04T21:40:11.094Z",
+        "updated_at": null,
+        "rating": 5,
+        "prof": 1,
+        "course": 1,
+        "user": 1
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 2,
+    "fields":
+    {
+        "message": "easy a",
+        "created_at": "2017-11-04T21:50:11.094Z",
+        "updated_at": null,
+        "rating": 5,
+        "prof": 1,
+        "course": 1,
+        "user": 2
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 3,
+    "fields":
+    {
+        "message": "chill",
+        "created_at": "2017-11-04T22:00:11.094Z",
+        "updated_at": null,
+        "rating": 5,
+        "prof": 1,
+        "course": 1,
+        "user": 3
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 4,
+    "fields":
+    {
+        "message": "load rev",
+        "created_at": "2017-11-04T22:10:11.094Z",
+        "updated_at": null,
+        "rating": 1,
+        "prof": 1,
+        "course": 1,
+        "user": 1
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 5,
+    "fields":
+    {
+        "message": "Easy A prof",
+        "created_at": "2017-11-04T22:20:11.094Z",
+        "updated_at": null,
+        "rating": 5,
+        "prof": 1,
+        "course": 1,
+        "user": 2
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 6,
+    "fields":
+    {
+        "message": "mabait",
+        "created_at": "2017-11-04T22:30:11.094Z",
+        "updated_at": null,
+        "rating": 5,
+        "prof": 1,
+        "course": 1,
+        "user": 3
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 7,
+    "fields":
+    {
+        "message": "explains really well",
+        "created_at": "2017-11-04T22:40:11.094Z",
+        "updated_at": null,
+        "rating": 4,
+        "prof": 1,
+        "course": 1,
+        "user": 1
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 8,
+    "fields":
+    {
+        "message": "makes a lot of jokes",
+        "created_at": "2017-11-04T22:50:11.094Z",
+        "updated_at": null,
+        "rating": 4,
+        "prof": 1,
+        "course": 1,
+        "user": 2
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 9,
+    "fields":
+    {
+        "message": "friendly with students",
+        "created_at": "2017-11-04T23:00:11.094Z",
+        "updated_at": null,
+        "rating": 4,
+        "prof": 1,
+        "course": 1,
+        "user": 3
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 10,
+    "fields":
+    {
+        "message": "fair in giving grades",
+        "created_at": "2017-11-04T23:10:11.094Z",
+        "updated_at": null,
+        "rating": 4,
+        "prof": 1,
+        "course": 1,
+        "user": 1
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 1,
+    "fields":
+    {
+        "user": 1,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 2,
+    "fields":
+    {
+        "user": 2,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 3,
+    "fields":
+    {
+        "user": 3,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 4,
+    "fields":
+    {
+        "user": 4,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 5,
+    "fields":
+    {
+        "user": 5,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 6,
+    "fields":
+    {
+        "user": 6,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 7,
+    "fields":
+    {
+        "user": 7,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 8,
+    "fields":
+    {
+        "user": 8,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 9,
+    "fields":
+    {
+        "user": 9,
+        "email_confirmed": false
+    }
+},
+{
+    "model": "accounts.profile",
+    "pk": 10,
+    "fields":
+    {
+        "user": 10,
+        "email_confirmed": false
+    }
+}]

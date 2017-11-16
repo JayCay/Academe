@@ -1,0 +1,366 @@
+[
+  {
+    "model": "profs.Prof",
+    "pk": 1,
+    "fields": {
+      "first_name": "Gab",
+      "last_name": "De Jesus"
+    }
+  },
+  {
+    "model": "profs.Prof",
+    "pk": 2,
+    "fields": {
+      "first_name": "Jayce",
+      "last_name": "Ching"
+    }
+  },
+  {
+    "model": "profs.Prof",
+    "pk": 3,
+    "fields": {
+      "first_name": "Josh",
+      "last_name": "Castillo"
+    }
+  },
+  {
+    "model": "profs.Prof",
+    "pk": 4,
+    "fields": {
+      "first_name": "Nate",
+      "last_name": "Kibanoff"
+    }
+  },
+  {
+    "model": "profs.Course",
+    "pk": 1,
+    "fields": {
+      "name": "CS 123",
+      "prof": [1]
+    }
+  },
+  {
+    "model": "profs.Course",
+    "pk": 2,
+    "fields": {
+      "name": "CS 129.1",
+      "prof": [1]
+    }
+  },
+  {
+    "model": "profs.Course",
+    "pk": 3,
+    "fields": {
+      "name": "CS 152",
+      "prof": [1]
+    }
+  },
+  {
+    "model": "profs.Course",
+    "pk": 4,
+    "fields": {
+      "name": "CS 21a",
+      "prof": [1]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$WY4181pJ6jEZ$rLoJ0PUypo1TAohz14uhcw6U2qAMvoWT0ZP9Nx/GrRU=",
+      "last_login": "2017-11-05T05:17:10.767Z",
+      "is_superuser": true,
+      "username": "gab",
+      "first_name": "",
+      "last_name": "",
+      "email": "g@email.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-05T05:16:54.320Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$CTc1bTGpb5XX$gqztJEFTYdhGP46roZA9f81aFgUHduUuhR3DtKJqQWA=",
+      "last_login": "2017-11-05T05:34:36.228Z",
+      "is_superuser": false,
+      "username": "test",
+      "first_name": "",
+      "last_name": "",
+      "email": "gabs@obf.ateneo.edu",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2017-11-05T05:17:50.362Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$q8uanmkHZOq1$t+MMohk2JueruwP+PKKLHQr4bGV8v/8009AbRHLTy1k=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "Third User",
+      "first_name": "",
+      "last_name": "",
+      "email": "user@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-12-06T02:21:29.562Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$q8uanmkHZOq1$t+MMohk2JueruwP+PKKLHQr4bGV8v/8009AbRHLTy1k=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "JustMonika",
+      "first_name": "",
+      "last_name": "",
+      "email": "lilmonix3@ddlc.moe",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-06T02:21:29.562Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$B2d7YHRVEhCF$1uNgdZjsQnLHCrAbuyHzoAKME+Zsaxd9sk3WODX/F/o=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "jayce",
+      "first_name": "",
+      "last_name": "",
+      "email": "jayce@academe.me",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-06T02:24:13.352Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$OwOm3XlXOtJC$F0HSveJ50XDP+fgYWhXjPYYJ+v5+uptanqOsMnKkup4=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "josh",
+      "first_name": "",
+      "last_name": "",
+      "email": "josh@academe.me",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-06T02:24:31.611Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$m4DYavykXw30$nh9VdgTie8k8mz/qlrXpEZLeRHDKGUGE6LB1nGq/eUk=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "nate",
+      "first_name": "",
+      "last_name": "",
+      "email": "nate@academe.me",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-06T02:30:32.780Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$9IKkqXDMimF6$n5bShF22TKEIabIz23rAds6c9vGfvpDeTUoigJqjkss=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "DjangoUnchained",
+      "first_name": "",
+      "last_name": "",
+      "email": "jjjajango@academe.me",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-06T02:32:33.714Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$DmSZdYLL3gDk$VA42X4qGTkg57FWKXVs8jbBKpa3x26S/1yfEMuLVBj4=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "NameUser",
+      "first_name": "",
+      "last_name": "",
+      "email": "username@email.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-06T02:33:40.289Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$36000$znKBjfvb5mDG$YyW03jKMHmAsD3bRTnfCHsmhM/TThOhjDcfByvCfG88=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "WordPass",
+      "first_name": "",
+      "last_name": "",
+      "email": "password@email.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2017-11-06T02:34:07.822Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":1,
+    "fields":{
+      "message":"legendary",
+      "created_at":"2017-11-05 05:40:11.094971+08:00",
+      "rating":5,
+      "prof":1,
+      "course":1,
+      "user":1
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":2,
+    "fields":{
+      "message":"easy a",
+      "created_at":"2017-11-05 05:50:11.094971+08:00",
+      "rating":5,
+      "prof":1,
+      "course":1,
+      "user":2
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":3,
+    "fields":{
+      "message":"chill",
+      "created_at":"2017-11-05 06:00:11.094971+08:00",
+      "rating":5,
+      "prof":1,
+      "course":1,
+      "user":3
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":4,
+    "fields":{
+      "message":"load rev",
+      "created_at":"2017-11-05 06:10:11.094971+08:00",
+      "rating":1,
+      "prof":1,
+      "course":1,
+      "user":1
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":5,
+    "fields":{
+      "message":"Easy A prof",
+      "created_at":"2017-11-05 06:20:11.094971+08:00",
+      "rating":5,
+      "prof":1,
+      "course":1,
+      "user":2
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":6,
+    "fields":{
+      "message":"mabait",
+      "created_at":"2017-11-05 06:30:11.094971+08:00",
+      "rating":5,
+      "prof":1,
+      "course":1,
+      "user":3
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":7,
+    "fields":{
+      "message":"explains really well",
+      "created_at":"2017-11-05 06:40:11.094971+08:00",
+      "rating":4,
+      "prof":1,
+      "course":1,
+      "user":1
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":8,
+    "fields":{
+      "message":"makes a lot of jokes",
+      "created_at":"2017-11-05 06:50:11.094971+08:00",
+      "rating":4,
+      "prof":1,
+      "course":1,
+      "user":2
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":9,
+    "fields":{
+      "message":"friendly with students",
+      "created_at":"2017-11-05 7:00:11.094971+08:00",
+      "rating":4,
+      "prof":1,
+      "course":1,
+      "user":3
+    }
+  },
+  {
+    "model":"reviews.Review",
+    "pk":10,
+    "fields":{
+      "message":"fair in giving grades",
+      "created_at":"2017-11-05 07:10:11.094971+08:00",
+      "rating":4,
+      "prof":1,
+      "course":1,
+      "user":1
+    }
+  }
+]

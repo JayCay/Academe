@@ -11,6 +11,8 @@
     <tr>
       <th>Review #</th>
       <th>Review By</th>
+      <th>Course</th>
+      <th>Professor</th>
       <th>Rating</th>
       <th>Review</th>
       <th>Created At</th>
@@ -21,6 +23,8 @@
     <tr>
       <th scope="row">{{ review.id }}</th>
       <td>{{ review.user }}</td>
+      <td>{{ review.course }}</td>
+      <td>{{ review.prof.first_name }} {{review.prof.last_name}}</td>
       <td>{{ review.rating }}</td>
       <td>{{ review.message }}</td>
       <td>{{ review.created_at }}</td>

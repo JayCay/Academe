@@ -13,4 +13,4 @@ class Course(models.Model):
 	prof = models.ManyToManyField(Prof)
 
 	def __str__ (self):
-		return self.name + " " + self.prof
+		return self.name

@@ -7,6 +7,7 @@
 			"created_at":"2017-11-05 05:40:11.094971+08:00",
 			"rating":5,
 			"prof":1,
+			"course":1,
 			"user":1
 		}
 	},
@@ -17,7 +18,8 @@
 			"message":"easy a",
 			"created_at":"2017-11-05 05:50:11.094971+08:00",
 			"rating":5,
-			"prof":2,
+			"prof":1,
+			"course":1,
 			"user":2
 		}
 	},
@@ -28,7 +30,8 @@
 			"message":"chill",
 			"created_at":"2017-11-05 06:00:11.094971+08:00",
 			"rating":5,
-			"prof":3,
+			"prof":1,
+			"course":1,
 			"user":3
 		}
 	},
@@ -39,7 +42,8 @@
 			"message":"load rev",
 			"created_at":"2017-11-05 06:10:11.094971+08:00",
 			"rating":1,
-			"prof":4,
+			"prof":1,
+			"course":1,
 			"user":1
 		}
 	},
@@ -51,6 +55,7 @@
 			"created_at":"2017-11-05 06:20:11.094971+08:00",
 			"rating":5,
 			"prof":1,
+			"course":1,
 			"user":2
 		}
 	},
@@ -61,7 +66,8 @@
 			"message":"mabait",
 			"created_at":"2017-11-05 06:30:11.094971+08:00",
 			"rating":5,
-			"prof":2,
+			"prof":1,
+			"course":1,
 			"user":3
 		}
 	},
@@ -72,7 +78,8 @@
 			"message":"explains really well",
 			"created_at":"2017-11-05 06:40:11.094971+08:00",
 			"rating":4,
-			"prof":3,
+			"prof":1,
+			"course":1,
 			"user":1
 		}
 	},
@@ -83,7 +90,8 @@
 			"message":"makes a lot of jokes",
 			"created_at":"2017-11-05 06:50:11.094971+08:00",
 			"rating":4,
-			"prof":4,
+			"prof":1,
+			"course":1,
 			"user":2
 		}
 	},
@@ -95,6 +103,7 @@
 			"created_at":"2017-11-05 7:00:11.094971+08:00",
 			"rating":4,
 			"prof":1,
+			"course":1,
 			"user":3
 		}
 	},
@@ -105,7 +114,8 @@
 			"message":"fair in giving grades",
 			"created_at":"2017-11-05 07:10:11.094971+08:00",
 			"rating":4,
-			"prof":2,
+			"prof":1,
+			"course":1,
 			"user":1
 		}
 	}

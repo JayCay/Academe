@@ -3,7 +3,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 
 # Import profs
-from profs.models import Prof
+from profs.models import Prof, Course
 
 # Create your models here.	
 class Review(models.Model):
@@ -15,6 +15,8 @@ class Review(models.Model):
 		validators = [MaxValueValidator(5), MinValueValidator(0)]
 	)
 	prof = models.ForeignKey(Prof, related_name = 'reviews')
+	course = models.ForeignKey(Course, related_name = 'reviews')
+	# prof_course = models.ForeignKey(Course, related_name='reviews')
 	user = models.ForeignKey(User, related_name = 'reviews')
 	
 	def __str__ (self):

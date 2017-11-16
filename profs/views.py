@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from profs.models import Prof
+from profs.models import Prof, Course
 from profs.forms import ProfForm
 from django.contrib import messages 
 from django.contrib.auth.models import User
@@ -50,6 +50,7 @@ def getProf(request, prof_id):
 			messages.error(request, "Error")
 			return render(request, 'profs/prof.html')
 	prof = Prof.objects.get(pk=prof_id)
-	reviews = Review.objects.filter(prof=prof)
+	# prof_course = Course.objects.filter(prof__id = prof_id)
+	reviews = Review.objects.filter(prof = prof)
 	return render(request, 'profs/prof.html', {'review_form': ReviewForm, 'prof': prof, 'reviews': reviews})
 	# return redirect(reverse('homepage'))
