@@ -5,12 +5,7 @@ from django.contrib.auth.models import User
 # Import profs
 from profs.models import Prof
 
-# Create your models here.
-
-class Course(models.Model):
-	name = models.CharField(max_length = 15, unique = True)
-	description = models.CharField(max_length = 100)
-	
+# Create your models here.	
 class Review(models.Model):
 	message = models.TextField(max_length = 4000)
 	created_at = models.DateTimeField(auto_now_add = True)
