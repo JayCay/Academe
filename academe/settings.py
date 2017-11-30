@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'reviews',
     'profs',
 	'accounts',
+    'courses',
 ]
 
 MIDDLEWARE = [

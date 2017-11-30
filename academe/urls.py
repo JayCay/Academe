@@ -23,6 +23,8 @@ from reviews import views as reviews_views
 
 from profs import views as profs_views
 
+from courses import views as courses_views
+
 from academe import views as academe_views
 
 urlpatterns = [
@@ -37,4 +39,6 @@ urlpatterns = [
     url(r'reviews/$', reviews_views.index, name="reviews_index"),
     url(r'^prof/$', profs_views.index, name="profs_index"),
     url(r'^prof/(?P<prof_id>[0-9]+)/$', profs_views.getProf, name="profs_getProf"),
+    url(r'^course/$', courses_views.index, name="courses_index"),
+    # url(r'^course/(?P<course_id>[0-9]+)/$', courses_views.getCourse, name="courses_getCourse"),
 ]
