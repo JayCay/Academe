@@ -7,15 +7,4 @@
 		<li><a href="">{{ course.name }}</a></li>
 	</ul>
 {% endfor %}
-
-<!-- Form for making a new review -->
-<h1>New Review</h1>
-<form method="POST">
-	{% csrf_token %}
-	<p>{{ review_form.message }}</p>d
-    <p>{{ review_form.rating }}</p>
-    <p>{{ review_form.prof }}</p>
-	<button type="submit">Save</button>
-</form>
-
 {% endblock %}

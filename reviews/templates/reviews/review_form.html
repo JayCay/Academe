@@ -1,0 +1,83 @@
+<!-- Make the form for uploading a new review -->
+{% extends 'templates/base.html' %}
+{% block content %}
+<h1>New review {% if curr_prof %} for {{ prof.first_name }} {{ prof.last_name }}{% endif %}</h1>
+<form method="POST">
+	{% csrf_token %}
+	<p>{{ review_form.message }}</p>
+	<p>{{ review_form.rating }}</p>
+	{% if not curr_prof %}
+	<!-- If no prof selected, show all profs and courses -->
+	<p>{{ review_form.prof }} <span id="show" style="display: none">Getting Courses...</span></p>
+
+	{% else %}
+	<p>{{ review_form.course }}</p>
+
+	{% endif %}
+	<button type="submit">Save</button>
+	{% if messages %}
+	{% for message in messages %}
+	{{ message }}
+	{% endfor %}
+	{% endif %}
+
+	<!-- AJAX -->
+	<script type="text/javascript">
+		var profDropDown = document.getElementById('prof');
+		function dropDownSelect() {
+			if(profDropDown.selectedIndex > 0) {
+				var profName = profDropDown.options[profDropDown.selectedIndex].text;
+				if(profName !== "") {
+					console.log("Getting courses of " + profName);
+					callXHR(profName);
+				}
+			}
+		}
+
+		function callXHR(profName) {
+			// Get the courses of the prof specified
+			var xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					// If the drop down has been made, delete it
+					if (document.querySelector('#show ~ select')) {
+						var dropDown = document.querySelector('#show ~ select');
+						dropDown.remove();
+					}
+					// Make the dropdown
+					document.querySelector("#show").style.display = "inline";
+					var select = document.getElementById('show').parentNode;
+					select.append(document.createElement('select'));
+					var dropDown = document.querySelector('#show ~ select');
+					dropDown.name = 'course';
+					var json = JSON.parse(xhr.response);
+					// Add the courses returned by json to to the dropdown
+					for (var i = 1; course = json[i]; i++) {
+						if (i == 1) {
+							var placeholder = document.createElement('option');
+							placeholder.value = "";
+							placeholder.textContent = "Select a course";
+							dropDown.appendChild(placeholder);
+						}
+						var option = document.createElement('option');
+						option.value = i;
+						option.textContent = course;
+						dropDown.appendChild(option);
+					}
+					document.querySelector("#show").style.display = "none";
+					console.log("XHR Request done");
+
+				}
+			};
+			xhr.open("GET", "/course/prof/" + profName + '/', true);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send();
+			console.log('Sent XHR request for prof ' + profName);
+		}
+
+		document.getElementById('prof').addEventListener("change", dropDownSelect);
+		
+
+	</script>
+</form>
+{% endblock %}

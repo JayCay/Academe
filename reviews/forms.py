@@ -12,3 +12,8 @@ class ReviewForm(ModelForm):
 	class Meta:
 		model = Review
 		fields = ['message', 'rating', 'prof', 'course', 'user']
+
+	def __init__(self, *args, **kwargs):
+		super(ReviewForm, self).__init__(*args, **kwargs)
+		self.fields['prof'].widget.attrs['id'] = 'prof'
+

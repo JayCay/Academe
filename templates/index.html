@@ -1,4 +1,20 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 	<h1><center>Welcome to Academe</center></h1>
+	<form method="post" action="/search/" style="text-align: center">
+		{% csrf_token %}
+		<div>
+			<input type="text" placeholder="Search a course" name="course">
+			<br>
+			<button class="btn btn-outline-success">Search Course</button>
+		</div>
+		<p>or</p>
+		<div>
+			<input type="text" placeholder="Search a prof" name="prof">
+			<br>
+			<button class="btn btn-outline-success">Search Prof</button>	
+		</div>
+		<br>
+
+	</form>
 {% endblock %}

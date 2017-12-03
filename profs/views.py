@@ -11,15 +11,7 @@ from reviews.forms import ReviewForm
 from django.contrib.auth.decorators import login_required
 
 def index(request):
-	# Make a prof
-	# if(request.method=='POST'):
-	# 	form = ProfForm(request.POST)
-	# 	if(form.is_valid()):
-	# 		form.save()
-	# 		# Return to profs_index using reverse so only need to change url in settings.py
-	# 		return redirect(reverse('profs_index'))
-
-	# Make a new review
+	# Make a request
 	if(request.method=='POST'):
 		post_values = request.POST.copy()
 		post_values['user'] = request.user.id
@@ -31,7 +23,7 @@ def index(request):
 			prof_id = post_values['prof']
 			return redirect(reverse('profs_getProf', args=(prof_id)))
 
-	profs = Prof.objects.all()
+	profs = all_profs()
 	return render(request, 'profs/index.html', {'review_form': ReviewForm, 'profs': profs})
 
 # Display the page of a prof using id passed through url
@@ -53,4 +45,13 @@ def getProf(request, prof_id):
 	prof = Prof.objects.get(pk=prof_id)
 	reviews = Review.objects.filter(prof = prof)
 	return render(request, 'profs/prof.html', {'review_form': ReviewForm, 'prof': prof, 'reviews': reviews})
-	# return redirect(reverse('homepage'))
+
+def all_profs():
+	"""Returns all the professors in the database"""
+	profs = Prof.objects.all()
+	return profs
+
+def prof(pk):
+	"""Returns a prof object with specific id"""
+	prof = Prof.objects.get(pk=pk)
+	return prof
