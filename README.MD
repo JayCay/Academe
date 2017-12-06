@@ -45,3 +45,43 @@ Django normally classes users into superusers/admins, normal users, and non-user
 Make sure you're in the directory `Academe`, and run `python manage.py createsuperuser`. Fill in the fields accordingly
 
 You can now login to `localhost:8080/admin` or `gabdejesus.com:8000/admin`, and create changes to the database
+
+### Resetting The Database
+
+In the `Academe` directory, run `python manage.py flush`
+
+This will remove all users, sessions, reviews, etc, from the database, so use wisely
+
+## Directory
+
+This section explains the different files and directories in the system
+
+### Apps
+
+Django uses apps to modularize code. Each app should theoretically bundle files and code that are related in functionality. 
+
+The apps of the system are:
+
+* Accounts - Handle user authentication, login, signup, and the like
+* Courses - Handle course related functions
+* Profs - Handle prof related functions
+* Reviews - Handle review related functions
+
+For an explanation of the files found in each app, please read the following sections
+
+### Views
+
+Views are used in Django for passing data to templates, and returning these templates to the user. Most, if not all, the logic is performed in `views.py` files. Each app has its own `views.py` file. I.E, accounts, profs, reviews, and courses each have a `views.py` 
+
+### Models
+
+Models are used to model database tables. Django converts `models.py` into models that are inserted into the DB specified in `settings.py`
+
+
+
+
+
+
+
+
+
