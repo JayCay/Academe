@@ -1,6 +1,9 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 <center><h1>Professors</h1></center>
+{% if message %}
+<center><p>{{message}}</p></center>
+{% endif %}
 <!-- Create the table rows -->
 {% for prof in profs %} 
 	<ul style="text-align: center; list-style: none; padding: 0">

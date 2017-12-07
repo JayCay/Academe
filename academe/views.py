@@ -12,6 +12,7 @@ from profs import views as prof_views
 from reviews.forms import ReviewForm
 
 from profs.models import Prof
+from courses.models import Course
 from django.contrib.auth.models import User
 
 def index(request):
@@ -32,15 +33,24 @@ def search(request):
 	if(request.method == 'POST'):
 		prof_query = request.POST.get('prof', None)
 		course_query = request.POST.get('course', None)
-		try:
-			# Query profs
-			prof_set = Prof.objects.annotate(search_name=Concat('first_name', Value(' '), 'last_name'))
-			profs = prof_set.filter(search_name__icontains=prof_query)
+		if prof_query:
+			message = "You searched profs for: " + prof_query
+			try:
+				# Query profs
+				prof_set = Prof.objects.annotate(search_name=Concat('first_name', Value(' '), 'last_name'))
+				profs = prof_set.filter(search_name__icontains=prof_query)
 
-			# profs = Prof.objects.filter(first_name__icontains=prof_query last_name__contains=prof_query)
-			return render(request, 'profs/index.html', {'profs': profs})
-		except Prof.DoesNotExist:
-			return HttpResponse('No such prof')
+				# profs = Prof.objects.filter(first_name__icontains=prof_query last_name__contains=prof_query)
+				return render(request, 'profs/index.html', {'profs': profs, 'message': message})
+			except Prof.DoesNotExist:
+				return HttpResponse('No such prof')
+		else:
+			message = "You searched courses for: " + course_query
+			try:
+				courses = Course.objects.filter(name__icontains=course_query)
+				return render(request, 'courses/index.html', {'courses': courses, 'message': message})
+			except Course.DoesNotExist:
+				return HttpResponse('No such course')
 	else:
 		courses = course_views.all_course()
 		return render(request, 'templates/browse.html', {'courses': courses})

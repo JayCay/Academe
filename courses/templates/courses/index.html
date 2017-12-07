@@ -1,7 +1,9 @@
 {% extends 'templates/base.html' %}
 {% block content %}
 <center><h1>Courses</h1></center>
-<!-- Create the table rows -->
+{% if message %}
+<center><p>{{message}}</p></center>
+{% endif %}
 {% for course in courses %} 
 	<ul style="text-align: center; list-style: none; padding: 0">
 		<li><a href="">{{ course.name }}</a></li>

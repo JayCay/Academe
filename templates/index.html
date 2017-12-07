@@ -1,26 +1,21 @@
 {% extends 'templates/base.html' %}
 {% block content %}
-	<h2><center> Welcome to Academe! </center></h2>
+	<h2 id="welcome"><strong><center> Welcome to Academe! </center><strong></h2>
 	<br>
-	<h3><center> Search for Reviews </center></h3>
-	<form method="post" action="/search/" style="text-align: center">
+	<h3><center> Looking for a prof or course? We got you.<center></h3>
+	<form id="search" method="post" action="/search/" style="text-align: center">
 		{% csrf_token %}
 		<div>
-			<br>
 			<input type="text" placeholder="Search a course" name="course">
+			<br>
+			<button type = "submit" class = "btn btn-primary">Search Course</button>
+		</div>
+		<p>or</p>
+		<div>
 			<input type="text" placeholder="Search a prof" name="prof">
 			<br>
-		</div>
-		<div>
-			<button type = "submit" class = "btn btn-primary">Search Course</button>
 			<button type = "submit" class = "btn btn-primary">Search Prof</button>
 		</div>
-		<!--<div>
-			<input type="text" placeholder="Search a prof" name="prof">
-			<br>
-			<input class="btn-primary" id="submitsearch" type="Search Prof" name="">	
-		</div> -->
 		<br>
-
 	</form>
 {% endblock %} 

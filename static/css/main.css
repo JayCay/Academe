@@ -15,3 +15,57 @@ th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+/* Base html */
+#welcome, h2, h1{
+	color: #4788C5 !important;
+	font-weight: bold !important;
+}
+
+/* Navbar */
+.navbar-brand {
+	font-weight: bold;
+}
+.navbar-brand, .nav-item a {
+	color: #4788C5 !important;
+	transition: 1s;
+}
+
+.nav-item a:hover {
+	text-decoration: underline;
+}
+
+#username {
+	color: black !important;
+}
+
+
+/* templates>index.html */
+.content {
+	margin: 4em;
+}
+
+#search div{
+	display: inline-block;
+	margin: 2em 1em;
+}
+
+#search p {
+	display: inline;
+	margin: 2em;
+	color: grey;
+}
+
+#search .btn {
+	width: 70%;
+	margin: 1em;
+	padding: 0.9em;
+	font-size: 0.8em;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* Browse */
+.course {
+	margin: 2em;
+}

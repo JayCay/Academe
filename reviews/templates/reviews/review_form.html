@@ -1,7 +1,7 @@
 <!-- Make the form for uploading a new review -->
 {% extends 'templates/base.html' %}
 {% block content %}
-<h1>New review {% if curr_prof %} for {{ prof.first_name }} {{ prof.last_name }}{% endif %}</h1>
+<h1>Create a review {% if curr_prof %} for {{ prof.first_name }} {{ prof.last_name }}{% endif %}</h1>
 <form method="POST">
 	{% csrf_token %}
 	<p>{{ review_form.message }}</p>
@@ -14,7 +14,7 @@
 	<p>{{ review_form.course }}</p>
 
 	{% endif %}
-	<button type="submit">Save</button>
+	<button id="save" type="submit" style="display: none">Save</button>
 	{% if messages %}
 	{% for message in messages %}
 	{{ message }}
@@ -24,6 +24,7 @@
 	<!-- AJAX -->
 	<script type="text/javascript">
 		var profDropDown = document.getElementById('prof');
+		// Runs when a prof is selected from drop down
 		function dropDownSelect() {
 			if(profDropDown.selectedIndex > 0) {
 				var profName = profDropDown.options[profDropDown.selectedIndex].text;
@@ -34,8 +35,13 @@
 			}
 		}
 
+		function showSave() {
+			document.querySelector("#save").style.display = "inline-block";
+		}
+
 		function callXHR(profName) {
 			// Get the courses of the prof specified
+			document.querySelector("#save").style.display = "none";
 			var xhr = new XMLHttpRequest();
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState === 4 && xhr.status === 200) {
@@ -50,22 +56,41 @@
 					select.append(document.createElement('select'));
 					var dropDown = document.querySelector('#show ~ select');
 					dropDown.name = 'course';
+					dropDown.id="dropdown";
 					var json = JSON.parse(xhr.response);
 					// Add the courses returned by json to to the dropdown
-					for (var i = 1; course = json[i]; i++) {
-						if (i == 1) {
-							var placeholder = document.createElement('option');
-							placeholder.value = "";
-							placeholder.textContent = "Select a course";
-							dropDown.appendChild(placeholder);
+					Object.keys(json).map(function(objectKey, index) {
+						if (json[objectKey]) {
+							if (index == 0) {
+								var placeholder = document.createElement('option');
+								placeholder.value = "";
+								placeholder.textContent = "Select a course";
+								dropDown.appendChild(placeholder);
+							}
+							var option = document.createElement('option');
+							option.value = index;
+							option.textContent = json[objectKey];
+							dropDown.appendChild(option);
 						}
-						var option = document.createElement('option');
-						option.value = i;
-						option.textContent = course;
-						dropDown.appendChild(option);
-					}
+					});
 					document.querySelector("#show").style.display = "none";
+					document.getElementById('dropdown').addEventListener("change", showSave);
 					console.log("XHR Request done");
+					// for (var i = 1; course = json[i]; i++) {
+					// 	if (i == 1) {
+					// 		var placeholder = document.createElement('option');
+					// 		placeholder.value = "";
+					// 		placeholder.textContent = "Select a course";
+					// 		dropDown.appendChild(placeholder);
+					// 	}
+					// 	var option = document.createElement('option');
+					// 	option.value = i;
+					// 	option.textContent = course;
+					// 	dropDown.appendChild(option);
+					// }
+					// document.querySelector("#show").style.display = "none";
+					// document.getElementById('dropdown').addEventListener("change", showSave);
+					// console.log("XHR Request done");
 
 				}
 			};
