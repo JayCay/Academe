@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#academe {
+     position: relative;
+     margin-left: auto;
+}
+
+#create {
+
+	position: relative;
+
+}
+
+#nav {
+	margin-left: auto;
+	border-right-style: none;	
+	border-left-style: none;
+	border-top-style: none;
+	border-bottom-style: solid;
+	border-color:#b0a1a0;
+}
+
+#sign {
+
+	text-align: center;
+	color:#56a6ed;
+	font-size: 2em;
+}
+
+#name {
+
+	 display: block;
+	 margin:auto;
+}
+
+#pass {
+
+	 display: block;
+	 margin:auto;
+}
+
+#email {
+
+	 display: block;
+	  margin:auto;
+}
+
+#submit {
+
+	color:#0f5abd;
+	margin-left: 48%;	
+}
+
+.signup {
+
+	text-align:center;
+	color:#0f5abd;
+} 
+
+#signpage {
+
+	margin-left: 0.5em;
+}
+
+#split {
+	margin-top: 1em;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+}
+
+
+#welcome {
+	margin-left: 2em;
+	color: #0f5abd;
+	font-size: 3em;
+}
+
+#searchfor {
+	margin-left: 4.5em;
+	color: #2e57db;
+	font-size: 2.8em;
+}
+
+#coursebox{
+	margin-left: 30%;
+	display: inline;
+
+}
+
+#profbox{
+
+	margin-left: 50%;
+	display: inline;
+
+
+}
+
+#prof {
+	color: #2e57db;
+	display: inline;
+	font-size: 1.5em;
+	margin-left: 14.7%;
+}
+
+#course {
+		
+	color: #2e57db;
+	display: inline;
+	font-size: 1.5em;
+	margin-left: 30%;
+	
+}
+
+#createtext {
+
+	color: #2e57db;
+	margin-left: 10%;
+	font-size: 1.8em;
+}
+
+#submitsearch {
+
+
+	margin-left: 45%;	
+}
+
+#dropdownMenuButton {
+  	width: 300px;
+  	height: 40px;
+  	margin-left: 11%;
+}
+
+#dropdownMenuButton2 {
+  	width: 300px;
+  	height: 40px;
+  	margin-left: 11%;
+}
+
+.dropdown-menu {
+	
+	margin-left: 11%;
+
+
+}
+
+#rating {
+
+	color: #2e57db;
+	margin-left: 10%;
+	font-size: 1.3em;
+}
+
+#textrev {
+
+	margin-left:10%;
+	width: 40%;
+	height: 8em;
+}
+
+#revsub {
+
+	margin-left: 10%;
+}
+
+
