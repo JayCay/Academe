@@ -1,0 +1,57 @@
+h1 {
+	margin-left: 1em;
+	padding: 1em;
+	padding-bottom: 0;
+}
+
+h4 {
+	margin-left: 6em;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+h4 span {
+	font-weight: normal;
+	color: grey;
+	margin-left: 1em;
+}
+
+h3 span {
+	font-weight: normal;
+	font-size: 0.5em;
+	color: grey;
+}
+
+h3 img {
+	width: 2em;
+	margin: 0.5em;
+}
+
+.review {
+	margin: 1em auto;
+	width: 80%;
+	background: white;
+	border: 1px solid #DDDDDD;
+	padding: 1em;
+}
+
+.review p {
+	margin-left: 2em;
+}
+
+.content {
+	margin: 0;
+}
+
+.reviews {
+	width: 100vw;
+	background: #EEEEEE;
+	border-top: 1px solid #DDDDDD;
+	margin: 0;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+#review_action {
+	margin-left: 5em;
+}

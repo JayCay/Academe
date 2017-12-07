@@ -21,7 +21,7 @@ def index(request):
 
 			# Go to that profs page
 			prof_id = post_values['prof']
-			return redirect(reverse('profs_getProf', args=(prof_id)))
+			return redirect(reverse('profs_getProf', args=(prof_id,)))
 
 	profs = all_profs()
 	return render(request, 'profs/index.html', {'review_form': ReviewForm, 'profs': profs})
@@ -38,7 +38,7 @@ def getProf(request, prof_id):
 		form = ReviewForm(post_values)
 		if(form.is_valid()):
 			form.save()
-			return redirect(reverse('profs_getProf', args=(prof_id)))
+			return redirect(reverse('profs_getProf', args=(prof_id,)))
 		else:
 			messages.error(request, "Error")
 			return render(request, 'profs/prof.html')

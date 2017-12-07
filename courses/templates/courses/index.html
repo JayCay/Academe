@@ -6,7 +6,7 @@
 {% endif %}
 {% for course in courses %} 
 	<ul style="text-align: center; list-style: none; padding: 0">
-		<li><a href="">{{ course.name }}</a></li>
+		<li><a href="{% url 'courses_getCourse' course_id=course.id %}">{{ course.name }}</a></li>
 	</ul>
 {% endfor %}
 {% endblock %}

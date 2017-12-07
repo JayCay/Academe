@@ -45,5 +45,5 @@ urlpatterns = [
     url(r'^prof/(?P<prof_id>[0-9]+)/$', profs_views.getProf, name="profs_getProf"),
     url(r'^course/$', courses_views.index, name="courses_index"),
     url(r'^course/prof/(?P<prof_name>[A-Za-z ]+)/$', courses_views.json_prof_courses, name="courses_json_prof_courses"),
-    # url(r'^course/(?P<course_id>[0-9]+)/$', courses_views.getCourse, name="courses_getCourse"),
+    url(r'^course/(?P<course_id>[0-9]+)/$', courses_views.getCourse, name="courses_getCourse"),
 ]

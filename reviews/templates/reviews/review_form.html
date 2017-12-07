@@ -24,6 +24,13 @@
 	<!-- AJAX -->
 	<script type="text/javascript">
 		var profDropDown = document.getElementById('prof');
+		try {
+			document.getElementById('id_course').addEventListener("change", showSave);
+		}
+		catch(e) {
+
+		}
+		
 		// Runs when a prof is selected from drop down
 		function dropDownSelect() {
 			if(profDropDown.selectedIndex > 0) {
@@ -68,7 +75,7 @@
 								dropDown.appendChild(placeholder);
 							}
 							var option = document.createElement('option');
-							option.value = index;
+							option.value = objectKey;
 							option.textContent = json[objectKey];
 							dropDown.appendChild(option);
 						}
@@ -76,21 +83,6 @@
 					document.querySelector("#show").style.display = "none";
 					document.getElementById('dropdown').addEventListener("change", showSave);
 					console.log("XHR Request done");
-					// for (var i = 1; course = json[i]; i++) {
-					// 	if (i == 1) {
-					// 		var placeholder = document.createElement('option');
-					// 		placeholder.value = "";
-					// 		placeholder.textContent = "Select a course";
-					// 		dropDown.appendChild(placeholder);
-					// 	}
-					// 	var option = document.createElement('option');
-					// 	option.value = i;
-					// 	option.textContent = course;
-					// 	dropDown.appendChild(option);
-					// }
-					// document.querySelector("#show").style.display = "none";
-					// document.getElementById('dropdown').addEventListener("change", showSave);
-					// console.log("XHR Request done");
 
 				}
 			};

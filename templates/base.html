@@ -5,7 +5,7 @@
 	<title>Academe</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-	<link rel="stylesheet" type="text/css" href="123.css">
+    {% block css %}{% endblock %}
 </head>
 <body>
 <nav class="navbar navbar-light navbar-toggleable-md bg-faded">
@@ -20,6 +20,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'review' %}">Create Review</a>
                 </li>
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'reviews_index' %}">All Reviews</a>
+                </li>
+                {% endif %}
+
             </ul>
             <form class="form-inline"><ul class="navbar-nav mr-auto">
                 	{% if user.is_authenticated %}

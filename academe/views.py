@@ -5,6 +5,7 @@ from django.db.models.functions import Concat
 from django.db.models import Value
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages 
+import datetime
 
 from courses import views as course_views
 from profs import views as prof_views
@@ -40,7 +41,6 @@ def search(request):
 				prof_set = Prof.objects.annotate(search_name=Concat('first_name', Value(' '), 'last_name'))
 				profs = prof_set.filter(search_name__icontains=prof_query)
 
-				# profs = Prof.objects.filter(first_name__icontains=prof_query last_name__contains=prof_query)
 				return render(request, 'profs/index.html', {'profs': profs, 'message': message})
 			except Prof.DoesNotExist:
 				return HttpResponse('No such prof')
@@ -52,7 +52,7 @@ def search(request):
 			except Course.DoesNotExist:
 				return HttpResponse('No such course')
 	else:
-		courses = course_views.all_course()
+		courses = course_views.all_courses(request)
 		return render(request, 'templates/browse.html', {'courses': courses})
 
 @login_required
@@ -70,9 +70,9 @@ def review(request, prof_id=None):
 		if(form.is_valid()):
 			form.save()
 			prof_id = post_values['prof']
-			return redirect(reverse('profs_getProf', args=(prof_id)))
+			return redirect(reverse('profs_getProf', args=(prof_id,)))
 		else:
-			messages.error(request, "Error")
+			print(form.errors)
 			return render(request, 'reviews/review_form.html')
 	# If there's an input prof, return review page for that prof
 	if prof_id:

@@ -32,6 +32,15 @@ def prof_courses(request, prof_id):
 	course = Course.objects.filter(prof=prof_id)
 	return course
 
+# Display the page of a prof using id passed through url
+def getCourse(request, course_id):
+	course = Course.objects.get(pk=course_id)
+	profs = course.prof.all()
+	message = 'Showing professors under: ' + course.name
+	print(profs)
+	return render(request, 'profs/index.html', {'profs': profs, 'message': message})
+
+
 def json_prof_courses(request, prof_name):
 	""" Returns the JSON of courses of a specific prof for xhr"""	
 	prof_set = Prof.objects.annotate(search_name=Concat('first_name', Value(' '), 'last_name'))

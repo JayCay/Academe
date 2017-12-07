@@ -1,11 +1,25 @@
 {% extends 'templates/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/reviews.css' %}">
+{% endblock %}
 {% block content %}
     <div> 
-    <h1><center>{{prof.first_name}} {{prof.last_name}}</center></h1>
-    <h4><center>Reviews</center></h4>
-
+      <h1>{{prof.first_name}} {{prof.last_name}}</h1>
+      <p id="review_action" ><a href="{% url 'review_prof' prof_id=prof.id %}">Review {{ prof.first_name }} {{ prof.last_name }}</a></p>
+    </div>  
+    <div class="reviews">
+      <h4>Reviews <span>{{ reviews.count }} total</span></h4>
+      {% for review in reviews %}
+      <div class="review">
+        <h3><img src="http://style.anu.edu.au/_anu/4/images/placeholders/person.png">{{review.user}} <span>Gave a rating of {{ review.rating }}/5</span></h3>
+        <p>&#8220;{{review.message}}&#8221;</p>
+      </div>
+      {% endfor %}
     </div>
 
+    
+<!-- 
     <table class="table table-bordered">
   <thead>
     <tr>
@@ -31,14 +45,14 @@
     </tr>
     {% endfor %}
   </tbody>
-</table>
+</table> -->
 {% if messages %}
 {% for message in messages %}
 {{ message }}
 {% endfor %}
 {% endif %}
 
-<p><a href="{% url 'review_prof' prof_id=prof.id %}">Review {{ prof.first_name }} {{ prof.last_name }}</a></p>
+
 
 <!-- <div class="form-group">
   <label for="comment">Review {{ prof.first_name }} {{ prof.last_name }}</label>

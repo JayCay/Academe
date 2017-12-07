@@ -5,8 +5,9 @@ from django.contrib.auth.models import User
 from .models import Review
 from profs.models import Prof
 from .forms import ReviewForm
+from django.contrib.auth.decorators import user_passes_test
 
-@login_required()
+@user_passes_test(lambda u: u.is_superuser)
 def index(request):
 	if(request.method=='POST'):
 		form = ReviewForm(request.POST)
